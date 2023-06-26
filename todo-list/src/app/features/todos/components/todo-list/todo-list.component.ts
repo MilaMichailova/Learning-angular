@@ -19,10 +19,12 @@ export class TodoListComponent implements OnInit {
       description: 'Первая задача',
       createAt: moment(),
     };
+
     const checkableItem: CheckableItem = {
       checked: false,
       data: todoItem,
     };
+
     this.todos.push(checkableItem);
     console.log(this.todos);
   }
