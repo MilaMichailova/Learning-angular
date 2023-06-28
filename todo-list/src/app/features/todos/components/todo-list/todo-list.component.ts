@@ -11,7 +11,9 @@ import { TodoItem } from '../../models/todo-item.ts.js';
 export class TodoListComponent implements OnInit {
   public todos: CheckableItem[] = [];
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit(): void {
     const todoItem: TodoItem = {
       id: '1',
       description: 'Первая задача',
@@ -24,6 +26,4 @@ export class TodoListComponent implements OnInit {
     this.todos.push(checkableItem);
     console.log(this.todos);
   }
-
-  ngOnInit(): void {}
 }
