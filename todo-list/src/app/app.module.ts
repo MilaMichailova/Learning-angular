@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodoListComponent } from './features/todos/components/todo-list/todo-list.component';
+import { TodosModule } from './features/todos/todos.module';
 
 @NgModule({
-  declarations: [AppComponent, TodoListComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, TodosModule],
   providers: [],
   bootstrap: [AppComponent],
 })
