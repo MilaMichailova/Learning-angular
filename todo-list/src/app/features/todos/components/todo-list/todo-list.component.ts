@@ -26,4 +26,11 @@ export class TodoListComponent implements OnInit {
     this.todos.push(checkableItem);
     console.log(this.todos);
   }
+
+  addTask() {
+    console.log('todo-list-add-task');
+  }
+  removeTask() {
+    console.log('todo-list-remove-task');
+  }
 }
