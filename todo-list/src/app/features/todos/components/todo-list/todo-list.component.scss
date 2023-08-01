@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+:host {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 300px;
+  min-height: 460px; // высота 100%. В этом приложении можешь ограничить только высоту в app.component--не получается элемент все равно сжимается даже при выставленной высоте у апп...
+  padding: 30px 30px 15px 30px;
+  font-family: Inter;
+  font-weight: 400;
+  background-color: beige;
+}
+
+.primary-title {
+  text-align: center;
+  font-size: 24px;
+  line-height: 29.05px;
+  color: black;
+}
+
+.secondary-title {
+  text-align: start;
+  font-size: 15px;
+  line-height: 18px;
+  color: black;
+  font-style: normal;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+
+.dayly-tasks {
+  width: 300px;
+  padding: 0;
+  margin-bottom: 30px; // для чего здесь нули? Тебе что-то нужно обнулить? Нет, не нужно.--поправила
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+  padding: 3px 0 3px 0;
+  width: 300px;
+}
+.input-checkbox {
+  width: 20px;
+}
+.deskription {
+  width: 250px;
+  text-align: start;
+  font-size: 12px;
+  line-height: 18.15px;
+  color: #5b5b5b;
+  font-style: normal;
+}
+
+.add-task-wrapper {
+  margin-top: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  height: 22px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+  .add-task-input {
+    border: none;
+    padding: 3px 0 3px 0;
+    width: 300px;
+    background-color: transparent;
+  }
+
+  .add-task-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+}

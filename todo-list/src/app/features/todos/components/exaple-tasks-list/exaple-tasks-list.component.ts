@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoItem } from '../../models/todo-item';
 import { CheckableItem } from '../../models/checkable-item';
 import * as moment from 'moment';
-import { TodoItem } from '../../models/todo-item.js';
-import { FormsModule } from '@angular/forms';
-import { ArrayType } from '@angular/compiler';
 
 @Component({
-  selector: 'app-todo-list',
-  templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.scss'],
+  selector: 'exaple-tasks-list',
+  templateUrl: './exaple-tasks-list.component.html',
+  styleUrls: ['./exaple-tasks-list.component.scss'],
 })
-export class TodoListComponent implements OnInit {
+export class ExapleTasksListComponent implements OnInit {
   public todos: CheckableItem[] = [];
   public newItemDescription: string = '';
 
