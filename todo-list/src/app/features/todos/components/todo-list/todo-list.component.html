@@ -1,3 +1,33 @@
-<p>Описание: {{todos[0].data.description}}</p>
-<app-add-button (pressed)="addTask()"></app-add-button>
-<app-remove-button (pressed)="removeTask()"></app-remove-button>
+<!--Этот див не нужен. У тебя сам компонент выступает контейнером. 
+    В стилях нужно использовать :host, чтобы задавать стили компоненту. Например:
+:host {
+
+} --поправила
+-->
+
+<h2 class="primary-title">Список задач: </h2>
+<!--Почему all-tasks? Чем не подходит tasks? --поправила -->
+<div class="tasks">
+    <h4 class="secondary-title">26.06.2023</h4>
+    <!--wriper?? Шо це такэ? Я знаю wrapper.--поправила-->
+    <div class="dayly-tasks">
+        <!--Вместо task-item можно написать просто item. Ты уже в компоненте, контекста достаточно, чтобы понимать, что же это за item.--поправила-->
+        <div *ngFor="let todoItem of todosArray" class="item">
+            <input type="checkbox" class="input-checkbox">
+            <!--Вместо task-deskription можно написать просто description. Ты уже в компоненте, контекста достаточно, чтобы понимать, что же это за description.--поправила-->
+            <span class="deskription">{{todoItem.data.description}} </span>
+            <app-remove-button (pressed)="removeTask()" class="remove-button"></app-remove-button>
+        </div>
+    </div>
+</div>
+<!--Зачем здесь этот блок? Достаточно всего лишь одного блока. 
+        Назвать его класс можно, например, create-task-section.--поправила--
+        sektion -> section. Через "c" пишется.
+    Класс down-section-add-task что говорит? Что у тебя ещё есть какой-то up-section-add-task?
+    -->
+<!-- <div class="create-task-section"> -->
+<div class="add-task-wrapper"><input type="text" maxlength="37" class="add-task-input" [(ngModel)]="newItemDescription"
+        placeholder="Новая задача">
+    <app-add-button (pressed)="addNewTask()"></app-add-button>
+</div>
+<!-- </div> -->

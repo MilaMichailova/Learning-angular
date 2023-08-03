@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:host {
+  background-color: antiquewhite;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  height: 460px;
+  align-items: center;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 37px 30px 30px 30px;
+}
+
+.header {
+  font-size: 24px;
+}
+
+.tasks {
+  padding-top: 23px;
+  width: 100%;
+}
+
+.day-group-header {
+  font-size: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px -20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.inner-dayly-tasks {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px -20px rgba(0, 0, 0, 0.1);
+}
+
+.create-task {
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.new-task-description {
+  width: 100%;
+}
+
+.create-task-button {
+  margin-left: auto;
+  padding-left: 10px;
+}

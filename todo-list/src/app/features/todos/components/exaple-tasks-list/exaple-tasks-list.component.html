@@ -1,0 +1,15 @@
+<span class="header">Список задач</span>
+<div class="tasks">
+    <div class="dayly-tasks">
+        <div class="day-group-header">31.07.2023</div>
+        <div class="inner-dayly-tasks">
+            <input type="checkbox" class="input-checkbox">
+            <div *ngFor="let todoItem of todosArray" class="task">{{todoItem.data.description}}</div>
+        </div>
+    </div>
+</div>
+<div class="create-task">
+    <input type="text" maxlength="37" class="new-task-description" [(ngModel)]="newItemDescription"
+        placeholder="Новая задача">
+    <app-add-button class="create-task-button" (pressed)="addNewTask()"></app-add-button>
+</div>
