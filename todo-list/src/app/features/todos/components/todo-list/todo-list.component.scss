@@ -46,7 +46,7 @@
 .input-checkbox {
   width: 20px;
 }
-.deskription {
+.description {
   width: 250px;
   text-align: start;
   font-size: 12px;
@@ -77,4 +77,8 @@
     outline: none;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
   }
+}
+
+.done {
+  text-decoration: line-through;
 }
