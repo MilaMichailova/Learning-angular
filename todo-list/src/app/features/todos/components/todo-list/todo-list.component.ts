@@ -4,11 +4,13 @@ import * as moment from 'moment';
 import { TodoItem } from '../../models/todo-item.js';
 import { FormsModule } from '@angular/forms';
 import { ArrayType } from '@angular/compiler';
+import { TodosSavingService } from '../../services/todos-saving.service.ts.service';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss'],
+  providers: [TodosSavingService],
 })
 export class TodoListComponent implements OnInit {
   public todos: CheckableItem[] = [];
@@ -18,19 +20,10 @@ export class TodoListComponent implements OnInit {
     return this.todos;
   }
 
-  constructor() {}
+  constructor(private TodosSavingService: TodosSavingService) {}
 
   ngOnInit(): void {
-    const todoItem: TodoItem = {
-      id: '1',
-      description: 'Первая задача',
-      createAt: moment(),
-    };
-    const checkableItem: CheckableItem = {
-      checked: false,
-      data: todoItem,
-    };
-    this.todos.push(checkableItem);
+    this.todos = this.TodosSavingService.load();
     console.log(this.todos);
   }
 
@@ -47,6 +40,12 @@ export class TodoListComponent implements OnInit {
     this.todos.push(checkableItem);
     this.newItemDescription = '';
     console.log(this.todos);
+    this.TodosSavingService.save(this.todos);
+  }
+
+  OnCheckedChange() {
+    this.TodosSavingService.save(this.todos);
+    console.log('Checked Change And Save');
   }
 
   removeTask() {
